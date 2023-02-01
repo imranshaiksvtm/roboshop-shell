@@ -1,6 +1,5 @@
-pwd
+script_location=$(pwd)
 
-exit
 yum install nginx -y
 systemctl enable nginx
 systemctl start nginx
@@ -11,7 +10,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
 
-cp files/nginx-roboshop.conf /etc/nginx/defalut.d/rpboshop.cof
+cp ${script_location}/files/nginx-roboshop.conf /etc/nginx/defalut.d/rpboshop.cof
 
 systemctl restart nginx
 
